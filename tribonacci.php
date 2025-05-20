@@ -25,11 +25,10 @@
                     if ($n < 3) {
                         echo '<div class="alert alert-danger mt-3">Number must be greater than or equal to 3</div>';
                     } else {
-                        // Using BCMath for large numbers (equivalent to BigInteger in Java)
                         $sequence = array();
-                        $a = '0';  // First Tribonacci number
-                        $b = '1';  // Second Tribonacci number
-                        $c = '1';  // Third Tribonacci number
+                        $a = '0'; 
+                        $b = '1';  
+                        $c = '1';  
                         
                         $sequence[] = $a;
                         $sequence[] = $b;
@@ -48,7 +47,7 @@
                         echo '<div class="result-box p-3 bg-light rounded">';
                         echo '<p class="mb-2">Tribonacci Numbers:</p>';
                         
-                        // Format sequence with 5 numbers per line (matching Android)
+
                         $formattedSequence = array_chunk($sequence, 5);
                         foreach ($formattedSequence as $index => $chunk) {
                             echo implode(', ', $chunk);

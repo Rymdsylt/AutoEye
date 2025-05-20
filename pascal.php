@@ -24,10 +24,11 @@
                     $rows = intval($_POST['rows']);
                     if ($rows < 1) {
                         echo '<div class="alert alert-danger mt-3">Number must be greater than or equal to 1</div>';
-                    } else {
-                        echo '<div class="mt-4">';
+                    } else {                        echo '<div class="mt-4">';
                         echo '<h4>Result:</h4>';
-                        echo '<div class="result-box p-3 bg-light rounded text-monospace">';
+                        $scrollClass = $rows > 15 ? 'result-scroll' : '';
+                        echo '<div class="result-box p-3 bg-light rounded text-monospace ' . $scrollClass . '">';
+                        echo '<div class="pascal-content">'; // Added wrapper for content
                           for ($i = 0; $i < $rows; $i++) {
                             echo str_repeat('&nbsp;&nbsp;', $rows - $i - 1);
                             
@@ -39,7 +40,7 @@
                             }
                             echo '<br>';
                         }
-                        
+                          echo '</div>'; // Close pascal-content
                         echo '</div></div>';
                     }
                 }
